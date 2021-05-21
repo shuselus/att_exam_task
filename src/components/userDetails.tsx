@@ -6,22 +6,25 @@ type Props = {
     userData: User | undefined;
 }
 
-const CurentUserPanel: React.FC<Props> = ({userData}) => {
+const UserDetails: React.FC<Props> = ({userData}) => {
     const [userInfo, setUserInfo] = useState<User | undefined>(undefined);
+    const [imgLoader, setImgLoader] = useState(true);
 
     useEffect(()=>{
         setUserInfo(userData);
       },[userData]);
-
+     // todo onLoad={setImgLoader(false)} 
     return(
        <>
            {
                userInfo !== undefined &&
-               <>
-                   <img className="user-details-img" src={userInfo.pic.large}/>
-                       <p><strong>name:</strong>
-                         <span>{`${userInfo.name.title} ${userInfo.name.first} ${userInfo.name.last}`}</span>
-                       </p>
+               <>  
+                    <div className="img-placeholder">
+                       <img className="user-details-img" src={userInfo.pic.large} />
+                    </div>
+                    <p><strong>name:</strong>
+                        <span>{`${userInfo.name.title} ${userInfo.name.first} ${userInfo.name.last}`}</span>
+                    </p>
                    
                     <div className="sep-txt-block">
                         <strong>location:</strong>
@@ -45,4 +48,4 @@ const CurentUserPanel: React.FC<Props> = ({userData}) => {
        </>
    );
 }
-export default CurentUserPanel
+export default UserDetails

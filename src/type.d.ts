@@ -22,5 +22,12 @@ import * as actionTypes from "./redusers/actionTypes";
     type: typeof actionTypes.ROUTE_NAME;
     payload: string;
   }
+  type userViewToggleState = {
+    thumb: boolean;
+  }
+  type userViewToggleAction = {
+    type: typeof actionTypes.THUMBNAIL_MODE;
+    payload: boolean;
+  }
   
   //type DispatchType = (args: UsersAction) => UsersAction
