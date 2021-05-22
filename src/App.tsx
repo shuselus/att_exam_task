@@ -51,6 +51,7 @@ const App = () => {
           country: item.location.country,
           postcode: item.location.postcode
           },
+          phone: item.phone,
           pic: {...item.picture}
       };
      return user;

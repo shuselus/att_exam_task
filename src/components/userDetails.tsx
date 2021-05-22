@@ -3,11 +3,11 @@ import { User } from '../interfaces';
 //import { CurrentUserState } from "../type";
 
 type Props = {
-    userData: User | undefined;
+    userData: User | null;
 }
 
 const UserDetails: React.FC<Props> = ({userData}) => {
-    const [userInfo, setUserInfo] = useState<User | undefined>(undefined);
+    const [userInfo, setUserInfo] = useState<User | null>(null);
     const [imgLoader, setImgLoader] = useState(true);
 
     useEffect(()=>{
@@ -17,7 +17,7 @@ const UserDetails: React.FC<Props> = ({userData}) => {
     return(
        <>
            {
-               userInfo !== undefined &&
+               userInfo &&
                <>  
                     <div className="img-placeholder">
                        <img className="user-details-img" src={userInfo.pic.large} />

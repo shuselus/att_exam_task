@@ -20,6 +20,7 @@ const initialState: CurrentUserState = {
           country: "",
           postcode: -1,
         },
+        phone: "",
         pic: {
           large: "",
           medium: "", 

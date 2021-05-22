@@ -10,7 +10,7 @@ import { AppState } from "../store/reducers";
 
 
 export const UserArea: React.FC = () => {
-    const [userList, setUserList] = useState<User[] | null>(null);
+    //const [userList, setUserList] = useState<User[] | null>(null);
     const [gotoUserDetails, setGotoUserDetails]= useState<boolean>(false);
     const dispatch: Dispatch<any> = useDispatch();
     const users = useSelector((state: AppState) => state.users);  
