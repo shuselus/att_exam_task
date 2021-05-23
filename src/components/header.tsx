@@ -7,7 +7,8 @@ import { Dispatch } from "redux";
 import { routeAct } from "../store/actionCreators";
 import { userViewToggleAct } from "../store/actionCreators";
 import { AppState } from "../store/reducers";
-   
+
+
 const Header: React.FC = () => {
     const [headerTxt, setHeaderTxt] = useState<string>("User List");
     const [showBackArrow, setShowBackArrow] = useState<boolean>(false);

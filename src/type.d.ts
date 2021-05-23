@@ -30,4 +30,3 @@ import * as actionTypes from "./redusers/actionTypes";
     payload: boolean;
   }
   
-  //type DispatchType = (args: UsersAction) => UsersAction

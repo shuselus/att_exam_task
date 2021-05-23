@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { User } from '../interfaces';
-//import { CurrentUserState } from "../type";
 
 type Props = {
     userData: User | null;

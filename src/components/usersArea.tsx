@@ -26,7 +26,7 @@ export const UserArea: React.FC = () => {
     },[]);
 
     useEffect(()=>{
-      if(currentUser.currenUser.id !== -1){
+      if(currentUser.currenUser.id.value){
          dispatch(routeAct(USERS_DETAILS));
       }
     },[currentUser]);

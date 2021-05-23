@@ -1,5 +1,8 @@
   export interface User{
-    id: number;
+    id: {
+      name: string,
+      value: string
+    };
     name: {
       first: string;
       last: string;
@@ -13,7 +16,7 @@
         number: number;
       },
       country: string;
-      postcode: number;
+      postcode: number|string;
     };
     phone: string;
     pic: {

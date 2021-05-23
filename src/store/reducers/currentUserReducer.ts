@@ -1,10 +1,12 @@
 import * as actionTypes from "../actionTypes";
 import { CurrentUserAction, CurrentUserState } from "../../type";
-import {User} from '../../interfaces';
 
 const initialState: CurrentUserState = {
     currenUser: {
-        id: -1,
+      id: {
+        name: "",
+        value: ""
+      },
         name: {
           first: "",
           last: "",
