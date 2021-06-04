@@ -38,16 +38,9 @@ const Header: React.FC = () => {
   
     return(
         <div className="app-header">
-            {
-                routePage.route === USERS_LIST &&
-                    <div className="view-toggle" onClick={(e) => onToggleClick(e)}>
-                    <img src={viewToggle ? ListIcon : GridIcon} className="back-arrow" alt="back-arrow" />
-                    </div>
-            }
-            
-                <div className="header-grid">
-                    
-                    <div className="header-grid-item">
+                <div className="header-items-cont">
+                   
+                    <div className="header-grid-item  mg-l" style={{ justifyContent: "flex-start"}}>
                         {
                           showBackArrow && 
                             <div className="back-btn-cont" onClick={(e) => goBackHandler(e)}>
@@ -59,6 +52,15 @@ const Header: React.FC = () => {
                    
                     <div className="header-grid-item">
                        <h3 className="header-title">{headerTxt}</h3>
+                    </div>
+                    <div className="header-grid-item mg-r" style={{ justifyContent: "flex-end"}}> 
+                        {
+                            routePage.route === USERS_LIST &&
+                            <div className="view-toggle" onClick={(e) => onToggleClick(e)}>
+                                <img src={viewToggle ? ListIcon : GridIcon} alt="toggle" />
+                            </div>
+                            
+                        }
                     </div>
                 </div>
         </div>

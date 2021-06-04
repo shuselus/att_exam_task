@@ -26,53 +26,48 @@ export const UserArea: React.FC = () => {
     },[]);
 
     useEffect(()=>{
-      if(currentUser.currenUser.id.value){
+      if(currentUser.currenUser.name.first){
          dispatch(routeAct(USERS_DETAILS));
       }
     },[currentUser]);
-
-     useEffect(()=>{
-       if(routePage.route === USERS_LIST){
-         setGotoUserDetails(false);
-       }else{
-         setGotoUserDetails(true);
-       }
-    },[routePage]);
-
+       
      useEffect(()=>{
       setThumbsMode(viewThumbs.thumb);
     },[viewThumbs]);
 
     return (
-      <>
+      <div className="cont">
       { users.users.length > 0 &&
         <>
           {
-              gotoUserDetails ?
+              routePage.route === USERS_DETAILS ?
                 <div className="user-details">
                   <UserDetails userData={currentUser.currenUser}/>
                 </div>
                 :
-                  thumbsMode ?
-                  <div className="user-list-cont">
-                  {
-                    users.users.map((item: User, index: number) =>
-                      <UserListItem key={index} data={item}/>
-                    )
-                  }
-                </div> 
-                : 
-                <div className="user-thumbs-cont">
-                  {
-                    users.users.map((item: User, index: number) =>
-                      <UserThumbItem key={index} data={item}/>
-                    )
-                  }
-                </div>
-          }
+               
+                    thumbsMode ?
+                    <div className="user-list-cont">
+                    {
+                      users.users.map((item: User, index: number) =>
+                        <UserListItem key={index} data={item}/>
+                      )
+                    }
+                  </div> 
+                  : 
+                  
+                  <div className="user-thumbs-cont">
+                    {
+                      users.users.map((item: User, index: number) =>
+                        <UserThumbItem key={index} data={item}/>
+                      )
+                    }
+                  </div>
+                }
+               
         </>
       }
-      </>
+      </div>
     );
     };
     export default UserArea;

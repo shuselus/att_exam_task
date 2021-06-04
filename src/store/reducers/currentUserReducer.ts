@@ -32,6 +32,7 @@ const initialState: CurrentUserState = {
 }
 
 export default (state: CurrentUserState = initialState, action:CurrentUserAction) => {
+  const { payload } = action;
 	switch (action.type) {
 	    case actionTypes.CURRENT_USER:
 			return { ...state, currenUser: action.payload }

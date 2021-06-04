@@ -6,8 +6,6 @@ import UserArea from './components/usersArea';
 import { usersListAct } from "./store/actionCreators";
 import Header from './components/header';
 
-
-
 const App = () => {
   const [loading, setLoading] = useState(true);
   const [errorMsg, setErrorMsg] = useState<Error>();
